@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { authService } from '../services/api';
-import '../styles/Auth.css';
+import axios from 'axios';
+import './Auth.css';
 
 function Login() {
   const navigate = useNavigate();
@@ -25,15 +25,20 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await authService.login(formData);
+      const response = await axios.post('http://localhost:8080/api/auth/login', formData);
       
-      if (response.success) {
+      if (response.data.success) {
+        // Store token and user data
+        localStorage.setItem('token', response.data.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.data));
+        
+        // Navigate to dashboard
         navigate('/dashboard');
       } else {
-        setError(response.message || 'Login failed');
+        setError(response.data.message || 'Login failed');
       }
     } catch (err) {
-      setError(err.message || 'Login failed. Please check your credentials.');
+      setError(err.response?.data?.message || 'Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
     }
@@ -58,7 +63,6 @@ function Login() {
               onChange={handleChange}
               required
               placeholder="john@example.com"
-              autoComplete="email"
             />
           </div>
 
@@ -72,7 +76,6 @@ function Login() {
               onChange={handleChange}
               required
               placeholder="••••••••"
-              autoComplete="current-password"
             />
           </div>
 

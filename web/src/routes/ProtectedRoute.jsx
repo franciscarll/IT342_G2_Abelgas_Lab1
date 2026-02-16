@@ -1,14 +1,15 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { authService } from '../services/api';
 
 function ProtectedRoute({ children }) {
-  const isAuthenticated = authService.isAuthenticated();
+  const token = localStorage.getItem('token');
 
-  if (!isAuthenticated) {
+  // If no token exists, redirect to login
+  if (!token) {
     return <Navigate to="/login" replace />;
   }
 
+  // If token exists, render the protected component
   return children;
 }
 

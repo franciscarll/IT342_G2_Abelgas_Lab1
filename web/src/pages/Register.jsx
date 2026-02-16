@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { authService } from '../services/api';
-import '../styles/Auth.css';
+import axios from 'axios';
+import './Auth.css';
 
 function Register() {
   const navigate = useNavigate();
@@ -28,16 +28,16 @@ function Register() {
     setLoading(true);
 
     try {
-      const response = await authService.register(formData);
+      const response = await axios.post('http://localhost:8080/api/auth/register', formData);
       
-      if (response.success) {
+      if (response.data.success) {
         alert('Registration successful! Please login.');
         navigate('/login');
       } else {
-        setError(response.message || 'Registration failed');
+        setError(response.data.message || 'Registration failed');
       }
     } catch (err) {
-      setError(err.message || 'Registration failed. Please try again.');
+      setError(err.response?.data?.message || 'Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }
