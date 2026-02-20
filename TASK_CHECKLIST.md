@@ -3,7 +3,7 @@
 - Repository created and cloned
 - Backend development (Spring Boot)
 - Frontend development (ReactJS)
-- Mobile app developmen
+- Mobile app development (Kotlin)
 ## IN-PROGRESS
 
 ## TODO
