@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#667eea</color>
+    <color name="secondary">#764ba2</color>
+    <color name="background">#f9fafb</color>
+    <color name="text_primary">#111827</color>
+    <color name="text_secondary">#6b7280</color>
+    <color name="border">#d1d5db</color>
+    <color name="error">#DC2626</color>
+    <color name="error_background">#FEF2F2</color>
+    <color name="error_border">#FCA5A5</color>
+    <color name="success">#4F46E5</color>
+    <color name="badge_background">#EEF2FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="focus_border">#667eea</color>
+</resources>
