@@ -1,9 +1,11 @@
 # TASK CHECKLIST
 ## DONE
 - Repository created and cloned
-## IN-PROGRESS
 - Backend development (Spring Boot)
 - Frontend development (ReactJS)
+- Mobile app developmen
+## IN-PROGRESS
+
 ## TODO
 - User registration API
 - User login API
