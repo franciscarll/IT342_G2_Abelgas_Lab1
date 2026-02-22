@@ -1,18 +1,24 @@
 # TASK CHECKLIST
+
 ## DONE
-- Repository created and cloned
-- Backend development (Spring Boot)
-- Frontend development (ReactJS)
-- Mobile app development (Kotlin)
-- User registration API
-- User login API
-- Password encryption (BCrypt)
-- Protected user profile API
-- MySQL database integration
-- Web and mobile UI pages
+
+* Repository created and cloned
+* Backend development (Spring Boot)
+* Frontend development (ReactJS)
+* Mobile app development (Kotlin)
+* User registration API
+* User login API
+* Password encryption (BCrypt)
+* Protected user profile API
+* MySQL database integration
+* Web and mobile UI pages
+* Documentation update
+
 
 
 ## IN-PROGRESS
 
 ## TODO
-- Documentation update
+
+
+
